@@ -5,6 +5,12 @@
   "devDependencies": {
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "@types/styled-components": "^5.1.26",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
+    "eslint": "^8.33.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-react": "^7.32.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "ts-loader": "^9.4.2",
@@ -15,7 +21,10 @@
   },
   "scripts": {
     "start": "webpack serve",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --write src/**/*.ts{,x}",
+    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
+    "prebuild": "rimraf ./build",
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
@@ -27,6 +36,8 @@
     "error-overlay-webpack-plugin": "^1.1.1",
     "html-webpack-plugin": "^5.5.0",
     "path": "^0.12.7",
-    "style-loader": "^3.3.1"
+    "react-icons": "^4.7.1",
+    "style-loader": "^3.3.1",
+    "styled-components": "^5.3.6"
   }
 }

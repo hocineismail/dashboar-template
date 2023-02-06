@@ -3,15 +3,19 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ErrorOverlayPlugin = require("error-overlay-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 const webpack = require("webpack");
-
+const mode = process.env.NODE_ENV || "development";
+const isProd = mode === "production";
 module.exports = {
-  mode: "development",
+  mode,
   entry: {
     app: path.join(__dirname, "src", "index.tsx"),
   },
   target: "web",
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
+  },
+  optimization: {
+    minimize: isProd,
   },
   module: {
     rules: [
@@ -20,6 +24,19 @@ module.exports = {
         use: "ts-loader",
         exclude: "/node_modules/",
       },
+      //   {
+      //     test: /\.(ts|tsx)$/,
+      //     exclude: /node_modules/,
+      //     use: [
+      //       {
+      //         loader: "eslint-loader",
+      //         options: {
+      //           failOnWarning: false,
+      //           failOnError: true,
+      //         },
+      //       },
+      //     ],
+      //   },
       {
         // this project use css, if you want to use scss just you can apply the rule bellow
         // test: /\.s[ac]ss$/i,
@@ -56,6 +73,6 @@ module.exports = {
   devtool: "cheap-module-source-map",
   devServer: {
     host: "0.0.0.0", //your ip address
-    port: 8080,
+    port: 3000,
   },
 };
