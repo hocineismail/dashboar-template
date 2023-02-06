@@ -7,7 +7,8 @@ import GlobalStyles from "./styles/globals";
 import { light } from "./styles/themes/light";
 import { dark } from "./styles/themes/dark";
 import ThemeMode from "./components/theme/ThemeMode";
-const Div = styled.div``;
+import Dashboard from "./pages/dashboard";
+
 interface ThemeInit {
   ready: boolean;
   theme: string;
@@ -54,7 +55,7 @@ export function App() {
       <ThemeProvider theme={state.theme === "DARK" ? dark : light}>
         <ThemeMode />
         <GlobalStyles />
-        <Div>text</Div>
+        <Dashboard />
       </ThemeProvider>
     </ThemeContext.Provider>
   );

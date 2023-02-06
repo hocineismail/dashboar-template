@@ -3,6 +3,7 @@ export const dark: any = {
     primary: "#fafafa",
     secondary: "#333",
     background: "#333",
+    backgroundSidebar: "#1e1e1e",
     text: "#fafafa",
   },
   font: {

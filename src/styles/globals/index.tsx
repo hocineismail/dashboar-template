@@ -12,12 +12,15 @@ const GlobalStyles = createGlobalStyle<ThemeProps>`
  html, body {
     margin: 0;
     padding: 0;
-    
+     transition: 0.3s;
     background-color: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.text};
     }
   
-
+  .sidebar {
+    background-color: ${({ theme }) => theme.colors.background};
+    
+  }
   h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
   }
