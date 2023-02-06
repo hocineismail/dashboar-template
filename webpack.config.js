@@ -21,20 +21,24 @@ module.exports = {
         exclude: "/node_modules/",
       },
       {
-        test: /\.s[ac]ss$/i,
-        use: [
-          "style-loader",
-          "css-loader",
-          //   {
-          //     loader: "sass-loader",
-          //     options: {
-          //       implementation: require("sass"),
-          //       sassOptions: {
-          //         fiber: false,
-          //       },
-          //     },
-          //   },
-        ],
+        // this project use css, if you want to use scss just you can apply the rule bellow
+        // test: /\.s[ac]ss$/i,
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+        // use: [
+        // In this project i didn't use a scss but you can use it by install sass-loader and apply this rule
+        //   "style-loader",
+        //   "css-loader",
+        //   {
+        //     loader: "sass-loader",
+        //     options: {
+        //       implementation: require("sass"),
+        //       sassOptions: {
+        //         fiber: false,
+        //       },
+        //     },
+        //   },
+        // ],
       },
     ],
   },
