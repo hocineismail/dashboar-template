@@ -13,6 +13,8 @@ const GlobalStyles = createGlobalStyle<ThemeProps>`
     margin: 0;
     padding: 0;
      transition: 0.3s;
+     font-family: 'Noto Sans', sans-serif;
+
     background-color: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.text};
     }

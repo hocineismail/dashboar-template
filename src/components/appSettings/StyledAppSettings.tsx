@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledThemeMode = styled.div`
+export const StyledAppSettings = styled.div`
   position: absolute;
   right: 20px;
   top: 20px;

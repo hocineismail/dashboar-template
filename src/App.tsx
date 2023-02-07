@@ -6,8 +6,9 @@ import "./App.css";
 import GlobalStyles from "./styles/globals";
 import { light } from "./styles/themes/light";
 import { dark } from "./styles/themes/dark";
-import ThemeMode from "./components/theme/ThemeMode";
+
 import Dashboard from "./pages/dashboard";
+import AppSettings from "./components/appSettings/appSettings";
 
 interface ThemeInit {
   ready: boolean;
@@ -53,7 +54,7 @@ export function App() {
   return (
     <ThemeContext.Provider value={{ state, dispatch }}>
       <ThemeProvider theme={state.theme === "DARK" ? dark : light}>
-        <ThemeMode />
+        <AppSettings />
         <GlobalStyles />
         <Dashboard />
       </ThemeProvider>

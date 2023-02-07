@@ -4,6 +4,7 @@ export const dark: any = {
     secondary: "#333",
     background: "#333",
     backgroundSidebar: "#1e1e1e",
+    sidebarItemActive: "rgba(72, 71, 71, 0.49)",
     text: "#fafafa",
   },
   font: {

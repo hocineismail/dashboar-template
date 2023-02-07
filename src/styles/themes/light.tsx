@@ -4,6 +4,7 @@ export interface Theme {
     secondary: string;
     background: string;
     backgroundSidebar: string;
+    sidebarItemActive: string;
     text: string;
   };
   font: {
@@ -18,6 +19,7 @@ export const light: Theme = {
     secondary: "#fafafa",
     background: "#fff",
     backgroundSidebar: "#333",
+    sidebarItemActive: "rgba(96, 96, 96, 0.49)",
     text: "#333",
   },
   font: {
