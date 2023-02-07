@@ -6,7 +6,7 @@ import {
   StyledHeadSidebar,
 } from "./StyledSideBar";
 import { RxDashboard } from "react-icons/rx";
-import { FiUsers } from "react-icons/fi";
+import { FiUsers, FiLogOut } from "react-icons/fi";
 import { RiMenu2Line } from "react-icons/ri";
 
 function Sidebar() {
@@ -42,6 +42,10 @@ function Sidebar() {
         <StyledListItem open={open}>
           <FiUsers size={17} />
           <span>Users</span>
+        </StyledListItem>
+        <StyledListItem open={open}>
+          <FiLogOut size={17} />
+          <span>Logi Out</span>
         </StyledListItem>
       </StyledList>
     </StyledSideBar>

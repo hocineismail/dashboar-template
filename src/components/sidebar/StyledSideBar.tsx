@@ -10,6 +10,7 @@ export const StyledHeadSidebar = styled.div`
 export const StyledSideBar = styled.div<any>`
   position: fixed;
   width: 100%;
+  z-index: 3;
   left: 0;
   top: 0;
   bottom: 0px;

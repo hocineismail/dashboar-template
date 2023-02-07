@@ -5,4 +5,5 @@ export const StyledAppSettings = styled.div`
   right: 20px;
   top: 20px;
   cursor: pointer;
+  z-index: 100;
 `;
