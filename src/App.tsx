@@ -1,14 +1,16 @@
 import React, { createContext, useReducer } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // @ts-ignore
 import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
 import "./App.css";
-import GlobalStyles from "./styles/globals";
+
 import { light } from "./styles/themes/light";
 import { dark } from "./styles/themes/dark";
 
-import Dashboard from "./pages/dashboard";
 import AppSettings from "./components/appSettings/appSettings";
+import GlobalStyles from "./styles/globals";
+import { routesLink } from "./constants";
 
 interface ThemeInit {
   ready: boolean;
@@ -34,7 +36,17 @@ function reducer(state: ThemeInit, action: ThemeAction): any {
       throw new Error();
   }
 }
-
+function Application() {
+  return (
+    <Router>
+      <Routes>
+        {routesLink.map((item) => (
+          <Route key={item.name} path={item.path} element={<item.element />} />
+        ))}
+      </Routes>
+    </Router>
+  );
+}
 export function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -56,7 +68,7 @@ export function App() {
       <ThemeProvider theme={state.theme === "DARK" ? dark : light}>
         <AppSettings />
         <GlobalStyles />
-        <Dashboard />
+        <Application />
       </ThemeProvider>
     </ThemeContext.Provider>
   );
