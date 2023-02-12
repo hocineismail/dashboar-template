@@ -72,6 +72,7 @@ module.exports = {
   ],
   devtool: "cheap-module-source-map",
   devServer: {
+    historyApiFallback: true,
     host: "0.0.0.0", //your ip address
     port: 3000,
   },
